@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film List</title>
+</head>
+<body>
+    <h1>Афиша</h1>
+    {% for i in film_key %}
+
+    <h2>{{i.title}}</h2>
+    <p><b>{{i.description}}</b></p>
+    <br>
+    <button><a href="/film_detail/{{i.id}}">Детальнее</a></button>
+
+    {% endfor %}
+</body>
+</html>
