@@ -30,3 +30,21 @@ def delete_tv_show_view(request, id):
     film_id_delete = get_object_or_404(models.Films, id=id)
     film_id_delete.delete()
     return HttpResponse('Фильм удален!')
+
+
+#update tv_show
+def update_tv_show_view(request, id):
+    film_id = get_object_or_404(models.Films, id=id)
+    if request.method == 'POST':
+        form = forms.TvShowForm(instance=film_id, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Объект успешно обновлен')
+    else:
+        form = forms.TvShowForm(instance=film_id)
+
+        context = {
+            'form': form,
+            'object': film_id
+        }
+    return render(request, 'films/crud/update_films.html', context)
