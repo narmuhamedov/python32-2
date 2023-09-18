@@ -6,13 +6,12 @@
 </head>
 <body>
     <h1>Афиша</h1>
+    <button><a href="/create_film/">Добавиль новый фильм</a></button>
     {% for i in film_key %}
-
     <h2>{{i.title}}</h2>
     <p><b>{{i.description}}</b></p>
     <br>
     <button><a href="/film_detail/{{i.id}}">Детальнее</a></button>
-
     {% endfor %}
 </body>
 </html>
