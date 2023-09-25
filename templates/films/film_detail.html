@@ -1,20 +1,20 @@
 {% include 'films/header.html' %}
 <center>
 <div class="card" style="width: 18rem;">
-  <img src="{{film_id_key.image.url}}" class="card-img-top" alt="...">
+  <img src="{{object.image.url}}" class="card-img-top" alt="...">
   <div class="card-body">
-       <h1>{{film_id_key.title}}</h1>
-    <h2>{{film_id_key.director}}</h2>
-    <p class="card-text">{{film_id_key.description}}</p>
-      <p class="card-text">{{film_id_key.genre}}</p>
-      <p class="card-text">{{film_id_key.cost}}</p>
+       <h1>{{object.title}}</h1>
+    <h2>{{object.director}}</h2>
+    <p class="card-text">{{object.description}}</p>
+      <p class="card-text">{{object.genre}}</p>
+      <p class="card-text">{{object.cost}}</p>
   </div>
 </div>
-    <iframe src="{{film_id_key.trailer}}" frameborder="0" width="640" height="420"></iframe>
+    <iframe src="{{object.trailer}}" frameborder="0" width="640" height="420"></iframe>
     <br>
-    <button type="button" class="btn btn-danger"><a style="text-decoration: none href="/film_detail/{{film_id_key.id}}/delete/">Удалить</a></button>
+    <button type="button" class="btn btn-danger"><a style="text-decoration: none;" href="/film_detail/{{object.id}}/delete/">Удалить</a></button>
 
-    <button type="button" class="btn btn-warning"><a style="text-decoration: none" href="/film_detail/{{film_id_key.id}}/update/">Изменить</a></button>
+    <button type="button" class="btn btn-warning"><a style="text-decoration: none" href="/film_detail/{{object.id}}/update/">Изменить</a></button>
     <br><br>
 </center>
 {% include 'films/footer.html' %}
