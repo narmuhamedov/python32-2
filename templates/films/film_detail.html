@@ -16,5 +16,19 @@
 
     <button type="button" class="btn btn-warning"><a style="text-decoration: none" href="/film_detail/{{object.id}}/update/">Изменить</a></button>
     <br><br>
+
+    <table border="2">
+        <tr>
+            <td>Оценка</td> <td>Комментарий</td> <td>Дата создания</td>
+        </tr>
+        {% for i in object.comment_object.all %}
+        <tr>
+            <td>{{i.review_stars}}</td> <td>{{i.review_text}}</td> <td>{{i.reviews_created_at}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
 </center>
 {% include 'films/footer.html' %}

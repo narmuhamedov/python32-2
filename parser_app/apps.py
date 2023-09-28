@@ -1,8 +1,6 @@
 from django.apps import AppConfig
 
 
-class TvShowConfig(AppConfig):
+class ParserAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'tv_show'
-    verbose_name = 'Фильмы'
-
+    name = 'parser_app'
