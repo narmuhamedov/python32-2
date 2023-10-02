@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'blog',
     'tv_show',
     'parser_app',
+    'custom_users',
 ]
 
 MIDDLEWARE = [
