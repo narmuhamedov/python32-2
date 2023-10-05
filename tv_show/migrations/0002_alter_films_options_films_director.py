@@ -4,19 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('tv_show', '0001_initial'),
+        ("tv_show", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='films',
-            options={'verbose_name': 'Премьеру', 'verbose_name_plural': 'Премьеры'},
+            name="films",
+            options={"verbose_name": "Премьеру", "verbose_name_plural": "Премьеры"},
         ),
         migrations.AddField(
-            model_name='films',
-            name='director',
+            model_name="films",
+            name="director",
             field=models.CharField(max_length=100, null=True),
         ),
     ]

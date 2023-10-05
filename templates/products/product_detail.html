@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+</head>
+<body>
+    <h1>{{object.name}}</h1>
+    <p>{{object.price}}</p>
+    <p>
+        <ul>
+        {% for tag in product.tags.all %}
+            <li>{{tag.name}}</li>
+        {% endfor %}
+    </ul>
+    </p>
+</body>
+</html>

@@ -4,24 +4,55 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Films',
+            name="Films",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100, verbose_name='Укажите название фильма')),
-                ('description', models.TextField(verbose_name='Укажите описание фильма')),
-                ('image', models.ImageField(upload_to='images/', verbose_name='Добавьте фото')),
-                ('genre', models.CharField(choices=[('Комедия', 'Комедия'), ('Хоррор', 'Хоррор'), ('Мелодрамма', 'Мелодрамма'), ('Аниме', 'Аниме')], max_length=100, verbose_name='Укажите жанр фильма')),
-                ('trailer', models.URLField(verbose_name='Укажите ссылку')),
-                ('cost', models.PositiveIntegerField(verbose_name='Укажите цену')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(
+                        max_length=100, verbose_name="Укажите название фильма"
+                    ),
+                ),
+                (
+                    "description",
+                    models.TextField(verbose_name="Укажите описание фильма"),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        upload_to="images/", verbose_name="Добавьте фото"
+                    ),
+                ),
+                (
+                    "genre",
+                    models.CharField(
+                        choices=[
+                            ("Комедия", "Комедия"),
+                            ("Хоррор", "Хоррор"),
+                            ("Мелодрамма", "Мелодрамма"),
+                            ("Аниме", "Аниме"),
+                        ],
+                        max_length=100,
+                        verbose_name="Укажите жанр фильма",
+                    ),
+                ),
+                ("trailer", models.URLField(verbose_name="Укажите ссылку")),
+                ("cost", models.PositiveIntegerField(verbose_name="Укажите цену")),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
             ],
         ),
     ]

@@ -10,44 +10,46 @@ HEADERS = {
 }
 
 
-#START PARSING
+# START PARSING
 @csrf_exempt
-def get_html(url, params=''):
+def get_html(url, params=""):
     req = requests.get(url, headers=HEADERS, params=params)
     return req
 
-#GET DATA
+
+# GET DATA
 @csrf_exempt
 def get_data(html):
-    soup = BS(html, 'html.parser')
-    items = soup.find_all("div", class_='short_movie_info')
+    soup = BS(html, "html.parser")
+    items = soup.find_all("div", class_="short_movie_info")
     manas_film = []
 
     for item in items:
         manas_film.append(
             {
-                "title_name": item.find("div", class_='m_title').get_text(),
-                "title_url": URL+item.find('a').get('href'),
-                "image": URL + item.find("div", class_='m_thumb').find("img").get("src"),
+                "title_name": item.find("div", class_="m_title").get_text(),
+                "title_url": URL + item.find("a").get("href"),
+                "image": URL
+                + item.find("div", class_="m_thumb").find("img").get("src"),
             }
         )
 
     return manas_film
 
-#endparse
+
+# endparse
 @csrf_exempt
 def parser():
     html = get_html(URL)
     if html.status_code == 200:
         all_films = []
         for page in range(0, 1):
-            html = get_html(f'http://www.manascinema.com/movies', params=page)
+            html = get_html(f"http://www.manascinema.com/movies", params=page)
             all_films.extend(get_data(html.text))
             return all_films
         # print(all_films)
     else:
-        raise Exception('Ошибка парсинга')
+        raise Exception("Ошибка парсинга")
+
 
 # parser()
-
-
